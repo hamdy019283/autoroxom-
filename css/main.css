@@ -372,3 +372,73 @@ table.schedule-grid .course-block:hover {
     box-shadow: 0 4px 20px rgba(37, 99, 235, 0.5);
     transform: translateY(-2px);
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header.navbar {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        text-align: center;
+    }
+    .logo {
+        font-size: 1.1rem;
+    }
+    .logo span:last-child {
+        font-size: 0.85rem !important;
+    }
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .nav-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.95rem;
+    }
+    .app-container {
+        padding: 1rem;
+    }
+    
+    #builder-view, #auto-gen-view {
+        flex-direction: column;
+    }
+    
+    .sidebar, .subjects-pool {
+        width: 100%;
+        height: auto;
+        max-height: 350px;
+        padding: 1rem;
+    }
+    
+    .builder-board, .main-board {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .builder-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    .stats {
+        justify-content: space-between;
+    }
+    
+    table.schedule-grid th, table.schedule-grid td {
+        padding: 0.5rem;
+    }
+    table.schedule-grid .day-cell {
+        font-size: 1rem;
+        width: 70px;
+    }
+    .th-time {
+        font-size: 0.65rem;
+    }
+    .c-name {
+        font-size: 0.85rem;
+    }
+    .c-doc {
+        font-size: 0.7rem;
+    }
+}
