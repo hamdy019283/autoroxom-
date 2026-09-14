@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المعهد التكنولوجي العالي - جداول قسم الهندسة الكهربية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="navbar glass-panel">
+        <div class="logo" style="display:flex; flex-direction:column; line-height:1.2;">
+            <span>المعهد التكنولوجي العالي - العاشر من رمضان</span>
+            <span style="font-size:0.95rem; font-weight:600; background:none; -webkit-text-fill-color: var(--text-muted);">قسم الهندسة الكهربية</span>
+        </div>
+        <div class="nav-links">
+            <button class="nav-btn" id="nav-auto" onclick="switchView('auto-gen-view')">التوليد التلقائي</button>
+            <button class="nav-btn active" id="nav-build" onclick="switchView('builder-view')">اصنع جدولك بنفسك</button>
+        </div>
+    </header>
+
+    <div class="app-container">
+        <!-- AUTO GENERATOR VIEW -->
+        <main id="auto-gen-view" class="view-section">
+            <aside class="sidebar glass-panel">
+                <div class="filters-group">
+                    <span class="filter-title">الحد الأقصى للأيام</span>
+                    <div class="toggle-pills">
+                        <button class="pill active" id="filter-day-4" onclick="setDayFilter(4)">4 أيام</button>
+                        <button class="pill" id="filter-day-5" onclick="setDayFilter(5)">5 أيام</button>
+                    </div>
+                </div>
+                <div class="filters-group">
+                    <span class="filter-title">الوحدات المستهدفة</span>
+                    <div class="toggle-pills">
+                        <button class="pill active" id="filter-unit-18" onclick="setUnitFilter(18)">18 وحدة</button>
+                        <button class="pill" id="filter-unit-21" onclick="setUnitFilter(21)">21 وحدة</button>
+                    </div>
+                </div>
+                <div class="filters-group" id="filter-addon-group" style="display:none;">
+                    <span class="filter-title">اختر ترقية الـ 21 وحدة</span>
+                    <select id="addon-filter" onchange="applyFilters()" style="padding: 0.5rem; background: rgba(0,0,0,0.3); color: var(--text-primary); border: 1px solid var(--border-glass); border-radius: 8px;">
+                        <option value="all">الكل (عرض جميع الترقيات الممكنة)</option>
+                        <option value="elective">مواد اختيارية (كوانتم، تحليل، إلخ)</option>
+                        <option value="cultural">مواد ثقافية (مادتين)</option>
+                    </select>
+                </div>
+                <div class="schedule-list" id="auto-list">
+                    <!-- Javascript will populate schedules here -->
+                </div>
+            </aside>
+            <section class="main-board">
+                <div style="display:flex; justify-content:flex-end;">
+                    <button class="action-btn" onclick="exportSchedule('auto-table', 'جدول_جاهز')">صورة 📸</button>
+                </div>
+                <div id="export-auto" style="background:var(--bg-base); padding: 1rem; border-radius: 12px;">
+                    <div class="schedule-table-wrapper">
+                        <table class="schedule-grid" id="auto-table">
+                            <!-- Javascript will populate table here -->
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- CUSTOM BUILDER VIEW -->
+        <main id="builder-view" class="view-section active">
+            <aside class="subjects-pool glass-panel" id="subjects-pool">
+                <!-- Javascript will populate categories here -->
+            </aside>
+            <section class="builder-board">
+                <div class="builder-header">
+                    <div class="stats">
+                        <div class="stat-box">الوحدات: <span id="bld-units">0</span></div>
+                        <div class="stat-box">أيام الحضور: <span id="bld-days">0</span></div>
+                    </div>
+                    <div style="display:flex; gap:10px;">
+                        <button class="action-btn" onclick="exportSchedule('builder-table', 'جدولي_المخصص')">صورة 📸</button>
+                        <button class="action-btn" onclick="clearBuilder()" style="background:#ef4444;">مسح الجدول</button>
+                    </div>
+                </div>
+                <div id="export-builder" style="background:var(--bg-base); padding: 1rem; border-radius: 12px;">
+                    <div class="schedule-table-wrapper">
+                        <table class="schedule-grid" id="builder-table">
+                            <!-- Javascript will populate the grid here -->
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <footer style="text-align:center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem;">
+        Developed with <span style="color:var(--accent-danger);">❤️</span> by 
+        <strong style="color:var(--accent-primary); letter-spacing:1px;">ENG/Hamdy</strong>
+    </footer>
+
+    <!-- Export Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!-- Data and App Logic -->
+    <script src="data/db.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/auto_gen.js"></script>
+    <script src="js/builder.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
