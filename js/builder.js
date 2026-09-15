@@ -20,7 +20,13 @@ const categoryNames = {
     "cult2": "مواد ثقافية (2 وحدة)",
     "cult1": "مواد ثقافية (1 وحدة)",
     "prep_physics": "فيزياء (إعدادي)",
-    "prep_chemistry": "كيمياء (إعدادي)"
+    "prep_chemistry": "كيمياء (إعدادي)",
+    "prep_math1": "رياضيات 1 (إعدادي)",
+    "prep_math2": "رياضيات 2 (إعدادي)",
+    "prep_drawing": "الرسم الهندسي (إعدادي)",
+    "prep_mechanics": "الميكانيكا الهندسية (إعدادي)",
+    "prep_english": "لغة انجليزية (إعدادي)",
+    "humanities_all": "مواد العلوم الأساسية (إنسانيات)"
 };
 
 function renderSubjectsPool() {
