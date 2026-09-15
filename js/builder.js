@@ -18,7 +18,9 @@ const categoryNames = {
     "electric_princ": "مبادئ هندسة كهربية",
     "comp1": "حاسبات 1",
     "cult2": "مواد ثقافية (2 وحدة)",
-    "cult1": "مواد ثقافية (1 وحدة)"
+    "cult1": "مواد ثقافية (1 وحدة)",
+    "prep_physics": "فيزياء (إعدادي)",
+    "prep_chemistry": "كيمياء (إعدادي)"
 };
 
 function renderSubjectsPool() {
